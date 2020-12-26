@@ -41,3 +41,15 @@ email.addEventListener('input', function() {
         emailError.textContent = "Email is not Valid";
     }
 });
+
+//UC3-Validating mobile number
+const mobileNumber = document.querySelector('#number');
+const mobileNumberError = document.querySelector('.number-error');
+mobileNumber.addEventListener('input', function() {
+    let mobileNumberRegex = RegExp('^[0-9]{10}$');
+    if (mobileNumberRegex.test(mobileNumber.value)) {
+        mobileNumberError.textContent = "";
+    } else {
+        mobileNumberError.textContent = "telephone number is not Valid";
+    }
+});
