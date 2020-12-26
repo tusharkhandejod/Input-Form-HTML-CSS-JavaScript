@@ -53,3 +53,16 @@ mobileNumber.addEventListener('input', function() {
         mobileNumberError.textContent = "telephone number is not Valid";
     }
 });
+
+//UC4-Validating password min 8 characters
+//UC5-Atleast 1 special character , atleast one capital letter and small letter and atleast one numeric number
+const pwd = document.querySelector('#pwd');
+const pwdError = document.querySelector('.pwd-error');
+pwd.addEventListener('input', function() {
+    let pwdRegex = RegExp('^(?=.*[0-9])(?=.*[A-Z])(?=.*[^0-9a-zA-Z])(?!.*[^0-9a-zA-Z].*[^0-9a-zA-Z]).{8,}$');
+    if (pwdRegex.test(pwd.value)) {
+        pwdError.textContent = "";
+    } else {
+        pwdError.textContent = "password is not Valid";
+    }
+});
